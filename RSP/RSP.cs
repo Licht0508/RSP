@@ -1,9 +1,22 @@
 using System;
 
-class RSP
+namespace RSP
 {
-    static void Main()
+    class RSP
     {
-        
+        static void Main()
+        { 
+            //インスタンス持ってきてねー
+
+
+            // じゃんけんの入力してねー
+
+            // じゃんけん判定してねー
+
+            //結果描画してねー
+
+        }
+
     }
+
 }
