@@ -1,42 +1,45 @@
 using System;
 
-class Input
-{   
-    public enum Hand
+namespace RSP
+{
+    class Input
     {
-        ROCK,
-        SCISSORS,
-        PAPER
-    }
-    public Hand hand = Hand.ROCK;
-
-    /// <summary>
-    /// 出す手を入力するメソッド
-    /// </summary>
-    public void InputHand()
-    {   
-        bool canFinish = false;
-        while(!canFinish)
+        public enum Hand
         {
-            Console.Write("Please enter Rock, Scissors or Paper : ");
-            string str = Console.ReadLine();
-            // 入力された手に応じて変数に格納する値を変更する
-            switch(str)
+            ROCK,
+            SCISSORS,
+            PAPER
+        }
+        public Hand hand = Hand.ROCK;
+
+        /// <summary>
+        /// 出す手を入力するメソッド
+        /// </summary>
+        public void InputHand()
+        {
+            bool canFinish = false;
+            while (!canFinish)
             {
-                case "Rock":
-                    hand = Hand.ROCK;
-                    canFinish = true;
-                    break;
-                case "Scissors":
-                    hand = Hand.SCISSORS;
-                    canFinish = true;
-                    break;
-                case "Paper":
-                    hand = Hand.PAPER;
-                    canFinish = true;
-                    break;
-                default:
-                    canFinish = false;
+                Console.Write("Please enter Rock, Scissors or Paper : ");
+                string str = Console.ReadLine();
+                // 入力された手に応じて変数に格納する値を変更する
+                switch (str)
+                {
+                    case "Rock":
+                        hand = Hand.ROCK;
+                        canFinish = true;
+                        break;
+                    case "Scissors":
+                        hand = Hand.SCISSORS;
+                        canFinish = true;
+                        break;
+                    case "Paper":
+                        hand = Hand.PAPER;
+                        canFinish = true;
+                        break;
+                    default:
+                        canFinish = false;
+                }
             }
         }
     }
