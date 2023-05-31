@@ -13,34 +13,47 @@ namespace RSP
         public Hand hand = Hand.ROCK;
 
         /// <summary>
-        /// 出す手を入力するメソッド
+        /// 入力を受け付けるメソッド
         /// </summary>
-        public void InputHand()
+        private string AcceptEntry()
         {
-            bool canFinish = false;
-            while (!canFinish)
+            Console.Write("Please enter Rock, Scissors or Paper : ");
+            string str = Console.ReadLine();
+            return str;
+        }
+
+        /// <summary>
+        /// 入力から手を出す手を判別するメソッド
+        /// </summary>
+        private Hand DetermineFromEntry(string str)
+        {
+            // 入力された手に応じて変数に格納する値を変更する
+            switch (str)
             {
-                Console.Write("Please enter Rock, Scissors or Paper : ");
-                string str = Console.ReadLine();
-                // 入力された手に応じて変数に格納する値を変更する
-                switch (str)
-                {
-                    case "Rock":
-                        hand = Hand.ROCK;
-                        canFinish = true;
-                        break;
-                    case "Scissors":
-                        hand = Hand.SCISSORS;
-                        canFinish = true;
-                        break;
-                    case "Paper":
-                        hand = Hand.PAPER;
-                        canFinish = true;
-                        break;
-                    default:
-                        canFinish = false;
-                }
+                case "Rock":
+                    hand = Hand.ROCK;
+                    break;
+                case "Scissors":
+                    hand = Hand.SCISSORS;
+                    break;
+                case "Paper":
+                    hand = Hand.PAPER;
+                    break;
+                default:
+                    break;
             }
+
+            return Hand;
+        }
+
+        /// <summary>
+        /// 出す手を決定するメソッド
+        /// </summary>
+        /// <returns>出す手</returns>
+        public Hand DetermineToPutHand()
+        {
+            string str = AcceptEntry();
+            return DetermineFromEntry(str);
         }
     }
 }
