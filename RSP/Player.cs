@@ -1,30 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RSP
+﻿namespace RSP
 {
     internal class Player
     {
 
         public Input input;
-
-        /// <summary>
-        /// Playerコンストラクタ
-        /// </summary>
-        Player()
-        {
-            input = new Input();
-        }
         
         /// <summary>
         /// 出す手を決めるメソッド
         /// </summary>
         public void InputHand()
         {
-            input.InputHand();
+            input.DetermineToPutHand();
         }
 
         /// <summary>
