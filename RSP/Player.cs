@@ -4,14 +4,6 @@
     {
 
         public Input input;
-
-        /// <summary>
-        /// Playerコンストラクタ
-        /// </summary>
-        Player()
-        {
-            input = new Input();
-        }
         
         /// <summary>
         /// 出す手を決めるメソッド
