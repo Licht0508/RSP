@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RSP
+﻿namespace RSP
 {
     internal class Player
     {
@@ -24,7 +18,7 @@ namespace RSP
         /// </summary>
         public void InputHand()
         {
-            input.InputHand();
+            input.DetermineToPutHand();
         }
 
         /// <summary>
