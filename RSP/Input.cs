@@ -2,54 +2,46 @@ using System;
 
 namespace RSP
 {
-    class Enemy
-    {   
-        private enum Hand
+    class Input
+    {
+        public enum Hand
         {
             ROCK,
             SCISSORS,
             PAPER
         }
-        private Hand _hand;
+        public Hand hand;
 
-        private Random _random;
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        private Enemy()
+        private Input()
         {
-            _random = new Random();
-            _hand = Hand.ROCK;
+            hand = Hand.ROCK;
         }
 
         /// <summary>
-        /// 1以上10未満の値を返すメソッド
+        /// 入力を受け付けるメソッド
         /// </summary>
-        /// <returns>1以上10未満のランダムな値</returns>
-        private int GenerateRandomNumber() => _random.Next(1, 10);
+        private string AcceptEntry()
+        {
+            Console.Write("Please enter Rock, Scissors or Paper : ");
+            string str = Console.ReadLine();
+            return str;
+        }
 
         /// <summary>
-        /// 3で割った余りを返すメソッド
+        /// 入力から手を出す手を判別するメソッド
         /// </summary>
-        /// <param name="num">余り</param>
-        private int FindRemainer(int num) => num % 3;
-
-        /// <summary>
-        /// 手を出す手を判別するメソッド
-        /// </summary>
-        private Hand DetermineFromRandom(int num)
+        private Hand DetermineFromEntry(string str)
         {
             // 入力された手に応じて変数に格納する値を変更する
-            switch (num)
+            switch (str)
             {
-                case (int)Hand.ROCK:
+                case "Rock":
                     hand = Hand.ROCK;
                     break;
-                case (int)Hand.SCISSORS:
+                case "Scissors":
                     hand = Hand.SCISSORS;
                     break;
-                case (int)Hand.PAPER:
+                case "Paper":
                     hand = Hand.PAPER;
                     break;
                 default:
@@ -65,9 +57,8 @@ namespace RSP
         /// <returns>出す手</returns>
         public Hand DetermineToPutHand()
         {
-            int num = GenerateRandomNumber();
-            int handNo = FindRemainer(num);
-            return DetermineFromRandom(handNo);
+            string str = AcceptEntry();
+            return DetermineFromEntry(str);
         }
     }
 }
