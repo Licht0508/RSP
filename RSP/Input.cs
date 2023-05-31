@@ -43,7 +43,7 @@ namespace RSP
                     break;
             }
 
-            return Hand;
+            return hand;
         }
 
         /// <summary>
