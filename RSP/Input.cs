@@ -2,14 +2,15 @@ using System;
 
 namespace RSP
 {
+    public enum Hand
+    {
+        ROCK,
+        SCISSORS,
+        PAPER
+    }
     class Input
     {
-        public enum Hand
-        {
-            ROCK,
-            SCISSORS,
-            PAPER
-        }
+        
         public Hand hand = Hand.ROCK;
 
         /// <summary>
