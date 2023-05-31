@@ -10,7 +10,12 @@ namespace RSP
             SCISSORS,
             PAPER
         }
-        public Hand hand = Hand.ROCK;
+        public Hand hand;
+
+        private Input()
+        {
+            hand = Hand.ROCK;
+        }
 
         /// <summary>
         /// 入力を受け付けるメソッド
