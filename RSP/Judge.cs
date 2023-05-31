@@ -50,5 +50,23 @@ namespace RSP
             }
             return false;
         }
+
+
+        /// <summary>
+        /// 入力を受け付けるメソッド
+        /// </summary>
+        private string AcceptEntry()
+        {
+            Console.Write("Continue?  Y or N : ");
+            string str = Console.ReadLine();
+            return str;
+        }
+
+        public bool JudgeContinueGame()
+        {
+            AcceptEntry();
+
+            return true;
+        }
     }
 }
