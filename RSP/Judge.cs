@@ -64,9 +64,18 @@ namespace RSP
 
         public bool JudgeContinueGame()
         {
-            AcceptEntry();
+            string str = AcceptEntry();
+            if (str == null) return false;
 
-            return true;
+            if(str == "Y")
+            {
+                return true;
+            }
+            else if (str == "N")
+            {
+                return false;
+            }
+            return false;
         }
     }
 }
